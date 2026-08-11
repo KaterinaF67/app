@@ -1,6 +1,6 @@
-const CACHE='systema-final-v1';
+const CACHE='systema-final-v1-1';
 const CORE=[
-  './','./index.html','./styles.css?v=3','./app.js?v=3','./manifest.webmanifest',
+  './','./index.html','./styles.css?v=4','./app.js?v=4','./manifest.webmanifest',
   './assets/app-icon.svg','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable-512.png',
   './assets/backgrounds/noise.svg','./assets/backgrounds/grid.svg','./assets/backgrounds/navy.svg'
 ];

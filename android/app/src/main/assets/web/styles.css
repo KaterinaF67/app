@@ -157,3 +157,47 @@ body{background:linear-gradient(135deg,var(--bg),var(--bg2));transition:backgrou
   .schedule-hour{grid-template-columns:48px minmax(0,1fr)}.minute-label{display:none}.time-group{grid-template-columns:1fr}.schedule-task{padding:8px}.schedule-task-copy strong{font-size:12px}
   .analytics-kpis{grid-template-columns:1fr}.donut-layout{grid-template-columns:1fr;justify-items:center}.donut-legend{width:100%}.activity-heatmap{grid-template-columns:repeat(7,1fr)}
 }
+
+
+/* === Mobile fit fixes v1.1 === */
+:root{--safe-bottom:env(safe-area-inset-bottom,0px);--safe-top:env(safe-area-inset-top,0px)}
+body{padding-bottom:0}
+.month-day,.calendar-cell{overflow:hidden}
+.day-value{display:block;max-width:100%;font-size:10px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:6px;padding-right:2px}
+.day-number{display:block;font-weight:800;font-size:12px}
+.day-fill{display:block;height:4px;border-radius:999px;margin-top:6px;max-width:100%}
+.habit-month-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.month-day{position:relative;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;text-align:left;min-height:92px;border:1px solid var(--line);border-radius:14px;background:rgba(11,23,23,.55)}
+.month-day.today{box-shadow:inset 0 0 0 1px var(--green)}
+.month-day.outside{opacity:.35}
+@media(max-width:760px){
+  .main-content{padding-top:calc(12px + var(--safe-top));padding-bottom:calc(118px + var(--safe-bottom))!important}
+  .topbar{position:sticky;top:0;z-index:12;padding-top:4px;background:linear-gradient(180deg,rgba(8,15,16,.92),rgba(8,15,16,.82),rgba(8,15,16,0))}
+  .mobile-nav{left:10px;right:10px;bottom:calc(10px + var(--safe-bottom));height:auto;min-height:68px;padding:6px 6px calc(6px + var(--safe-bottom));border-radius:20px;box-shadow:0 10px 35px rgba(0,0,0,.32)}
+  .mobile-nav button{min-height:56px;padding:6px 2px 4px}
+  .mobile-nav button span,.mobile-nav button{overflow:hidden}
+  .view-controls,.date-nav,.period-toolbar,.overview-head{padding:12px}
+  .day-timeline{gap:12px}
+  .schedule-column{border-radius:14px}
+  .schedule-hour{min-height:unset}
+  .schedule-hour-content{padding:7px}
+  .schedule-task{min-height:44px;padding:7px 8px;border-radius:10px}
+  .schedule-task-copy strong,.task-title{white-space:normal;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .schedule-task-copy p{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .habit-month-calendar{gap:6px}
+  .month-day{min-height:72px;padding:6px 5px;border-radius:12px}
+  .day-number{font-size:11px}
+  .day-value{font-size:9px;margin-top:4px}
+  .calendar-cell{min-height:78px;padding:6px 5px;border-radius:0}
+  .calendar-cell .num{font-size:11px}
+  .calendar-weekdays{padding:0 2px 8px;font-size:10px}
+  .segmented button{padding:9px 10px}
+}
+@media(max-width:420px){
+  .top-actions{gap:8px}.top-actions .primary-button{padding:8px 10px;min-width:auto}
+  .topbar h1{font-size:22px}
+  .habit-grid,.habit-grid.compact{grid-template-columns:1fr}
+  .habit-card{min-height:170px}
+  .month-day{min-height:64px;padding:5px 4px}
+  .day-value{font-size:8px}
+}
