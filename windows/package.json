@@ -1,0 +1,45 @@
+{
+  "name": "systema-desktop",
+  "version": "1.0.0",
+  "description": "Система — привычки, планер и аналитика",
+  "main": "main.js",
+  "author": "Katya",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.katya.systema.desktop",
+    "productName": "Система",
+    "asar": true,
+    "files": [
+      "main.js",
+      "web/**/*"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {"target": "nsis", "arch": ["x64"]},
+        {"target": "portable", "arch": ["x64"]}
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Система"
+    },
+    "artifactName": "Systema-${version}-${arch}.${ext}"
+  }
+}

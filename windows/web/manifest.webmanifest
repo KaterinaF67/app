@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "Система — привычки и планер",
+  "short_name": "Система",
+  "description": "Универсальный трекер привычек, дел, истории и аналитики.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#091411",
+  "theme_color": "#0b1717",
+  "icons": [
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}
